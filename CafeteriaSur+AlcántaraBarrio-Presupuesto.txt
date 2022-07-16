@@ -1,0 +1,19 @@
+SERVICIOS DETALLADOS:
+Objetivo del Proyecto: Pagina de venta de articulos para las Cafeterias.
+Plataformas y herramientas del Desarrollo: 
+-Visual Studio Code cómo editor de codigo.
+-Hosting: Netlify.
+-Framework: SASS.
+-Fases de Desarrollo: Index, Sección "Nosotros", Sección "Productos", Sección "Buscanós", Sección "Contactos".
+
+PRESUPUESTO:
+
+Diseño del Sitio:$12.000 ARS.
+Desarrollo del Sitio:$25.000 ARS.
+SEO Standar:$12.500 ARS.
+Hosting:Gratuito.
+TOTAL:$49.500.
+
+
+
+

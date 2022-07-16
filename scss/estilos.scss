@@ -1,0 +1,277 @@
+
+$colores:(
+color_1: black,
+color_2: rgb(22, 15, 6),
+bg-color_1: white,
+bg-color_2: #EADDCA,
+);
+
+$f-family: 'Roboto', sans-serif;
+
+@mixin flexible($dis, $direction, $just, $align){
+	display:$dis;
+	flex-direction:$direction;
+	justify-content: $just;
+	align-items: $align;
+}
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap";
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+@keyframes blink {
+	50% {
+		border-color: transparent;
+	}
+}
+
+* {
+	font-family: $f-family;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+    list-style: none;
+	
+}
+nav {
+	@include flexible(flex , column, center, center);
+	margin-top: 10px;
+	padding: auto;
+	background-color: map-get($colores, bg-color_1 );
+	background-image: linear-gradient(#EADDCA, rgb(185, 166, 114));
+	ul {
+		text-decoration: none;
+		list-style: none;
+		li {
+			a {
+				color: map-get($colores , color_1 );
+				font-weight: bold;
+				&:hover {
+					text-decoration: none;
+					color: map-get($colores , color_1 );
+				}
+			}
+		}
+	}
+    h1 {
+		padding-top: 15px;
+		font-weight: bold;
+		white-space: nowrap;
+		border-right: 4px solid;
+		width: 15ch;
+		animation: typing 2s steps(12), blink .5s infinite step-end alternate;
+		overflow: hidden;
+		text-decoration: underline;
+	}
+}
+header {
+	@include flexible(flex, column, center, center);
+	padding-top: 15px;
+	background-color: map-get($colores , bg-color_2 );
+	h2 {
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: bold;
+		padding: auto;
+	}
+	img {
+		flex-direction: column;
+		width: 55vw;
+	}
+}
+main {
+	background-color: map-get($colores , bg-color_2 );
+	h2 {
+		@include flexible(flex, column, center, center);
+		padding-top: 15px;
+		text-align: center;
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	img {
+		@include flexible(flex, column, center,center);
+		width: 55vw;
+		justify-content: center;
+		transform: translateX(120px);
+	}
+	p {
+		@include flexible(flex, column, center, center);
+		padding-top: 15px;
+		font-weight: bold;
+		font-size: 1em;
+		margin: auto;
+	}
+	iframe {
+		@include flexible(flex, column, center, center);
+		transform: translateX(40px);
+		width: 80%;
+	}
+}
+.pie {
+	display: flex;
+	flex-direction: column;
+	background-image: linear-gradient(#EADDCA, rgb(185, 166, 114));
+	h2 {
+		display: flex;
+		font-weight: bold;
+		font-size: 1.3em;
+		justify-content: center;
+	}
+	a {
+		img {
+			@include flexible(flex, column, center, center);
+		}
+	}
+	h3 {
+		justify-content: center;
+		text-align: center;
+	}
+}
+legend {
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+	font-size: 1.8em;
+	text-decoration: underline;
+}
+label {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+option {
+	font-weight: bold;
+}
+.productos-cafe {
+	h3 {
+		padding-top: 18px;
+		display: flex;
+		justify-content: center;
+		font-size: 1.2em;
+	}
+	legend {
+		display: flex;
+		justify-content: center;
+		padding-top: 15px;
+	}
+}
+.tabla {
+	display: flex;
+	justify-content: center;
+}
+.productos-balanza {
+	h3 {
+		display: flex;
+		justify-content: center;
+		font-size: 1.2em;
+	}
+	img {
+		display: flex;
+		justify-content: center;
+		width: 33vw;
+	}
+}
+.tabla-balanza {
+	legend {
+		display: flex;
+		justify-content: center;
+	}
+	display: flex;
+	justify-content: center;
+}
+.buscanos {
+	h2 {
+		font-size: 2.5em;
+		text-decoration: underline;
+		display: inline;
+	}
+	h3 {
+		font-size: 1.3em;
+		padding-top: 15px;
+		display: flex;
+		transform: translateX(40px);
+	}
+	h4 {
+		transform: translateX(10px);
+		font-size: 1.5em;
+	}
+}
+.ciudades {
+	transform: translateX(10px);
+
+}
+.input-more{
+	border:none;
+    @include flexible(flex, row, space-around, center);
+    &:hover{
+		background-color: #EADDCA;
+        cursor:pointer
+	}
+}
+.input-rounded{
+	@extend .input-more;
+	border-radius: 2px;
+}
+
+@media (min-width:720px) {
+	nav {
+		@include flexible(flex, row, center, center);
+		justify-content: space-between;
+		background-image: linear-gradient(#EADDCA, rgb(185, 166, 114));
+		ul {
+			@include flexible(flex, row, center, center);
+			letter-spacing: 0.8px;
+			list-style: none;
+		}
+	}
+	header {
+		background-color: map-get($colores , bg-color_2 );
+		h2 {
+			font-size: 1.7em;
+		}
+		img {
+			@include flexible(flex, row, center, center);
+
+			width: 35vw;
+			
+		}
+	}
+	main {
+		background-color:map-get($colores , bg-color_2 ) ;
+		h2 {
+			font-size: 1.8em;
+			padding-top: 25px;
+		}
+		img {
+			padding-top: 15px;
+			display: flex;
+			transform: translateX(400px);
+			width: 35vw;
+		}
+	}
+	footer {
+		@include flexible(flex, row, space-between, center);
+		padding-top: 15px;
+		background-color: map-get($colores , bg-color_1 );
+		background-image: linear-gradient(#EADDCA, rgb(185, 166, 114));
+		h2 {
+			display: flex;
+			font-weight: bold;
+			font-size: 1.3em;
+			justify-content: center;
+		}
+		a {
+			img {
+				@include flexible(flex, row, center, center);
+			}
+		}
+		h3 {
+			justify-content: center;
+			text-align: center;
+			
+		}
+	}
+	
+}
+
